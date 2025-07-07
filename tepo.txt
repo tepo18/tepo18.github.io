@@ -1,4 +1,0 @@
-trojan://pass123@188.114.98.228:443?security=tls&type=tcp#server1
-trojan://mypassword@185.236.232.216:443?security=tls&type=tcp#server2
-...
-trojan://superpass@111.222.333.444:443?security=tls&type=tcp#server4
