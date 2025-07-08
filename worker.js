@@ -201,15 +201,10 @@ async function handleRequest(request) {
     const clashMetaFormat = fragmentParam === 'clash' || settings.fragment.clashMetaFormat;
 
     const subscribeUrls = [
-      'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list10.txt',
-      'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list1.txt',
-      'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Splitted-By-Protocol/vmess.txt',
-      'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list11.txt',
-      'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list2.txt',
-      'https://raw.githubusercontent.com/NiREvil/vless/main/sub/clash-meta.yml',
-      'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml',
-      'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml',
-    ];
+  'https://raw.githubusercontent.com/NiREvil/vless/main/sub/v2ray.txt',
+  'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt',
+  'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt'
+];
 
     try {
       const rawConfigs = await fetchConfigs(subscribeUrls, settings.remoteDNS, settings.directDNS);
