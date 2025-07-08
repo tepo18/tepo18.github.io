@@ -118,7 +118,7 @@ async function handleRequest(request) {
       const cookies = request.headers.get('Cookie') || '';
       const sessionMatch = cookies.match(/session=([^;]+)/);
       const sessionToken = sessionMatch ? sessionMatch[1] : null;
-      const storedSession = await ARISTA.get(`session-${UUID}`);
+      const storedSession = await akbar9090.get(`session-${UUID}`);
 
       if (!sessionToken || sessionToken !== storedSession) {
         return new Response('Unauthorized. Please login first.', {
@@ -173,7 +173,7 @@ async function handleRequest(request) {
       };
 
       try {
-        await ARISTA.put(`settings-${uuid}`, JSON.stringify(newSettings), { expirationTtl: 86400 * 30 });
+        await akbar9090.put(`settings-${uuid}`, JSON.stringify(newSettings), { expirationTtl: 86400 * 30 });
         settings = newSettings;
         return new Response('Settings saved successfully.', {
           headers: { 'content-type': 'text/plain' }
@@ -291,7 +291,7 @@ async function handleRequest(request) {
     });
   }
 
-  return new Response('Arista Project - Worker Message', {
+  return new Response('Akbar1560 Project - Worker Message', {
     headers: { 'content-type': 'text/html' }
   });
 }
