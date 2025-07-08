@@ -91,10 +91,10 @@ async function handleRequest(request) {
   if (url.pathname === '/login') {
     if (request.method === 'POST') {
       const formData = await request.formData();
-      const password = formData.get('15601560');
+      const password = formData.get('1560');
       if (password === AKBAR1560) {
         const sessionToken = `${UUID}-${Date.now()}`;
-        await AKBAR9090.put(`session-${UUID}`, sessionToken, { expirationTtl: 86400 });
+        await akbar9090.put(`session-${UUID}`, sessionToken, { expirationTtl: 86400 });
         return new Response(renderPanel(), {
           headers: {
             'content-type': 'text/html',
