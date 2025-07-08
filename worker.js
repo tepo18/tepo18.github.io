@@ -3,7 +3,7 @@ addEventListener('fetch', event => {
 });
 
 const configCache = new Map();
-const validDomains = ['raw.githubusercontent.com', 'trusted-source.com'];
+const validDomains = ['raw.githubusercontent.com', 'trusted-source.com', 'tepo18.github.io'];
 
 let settings = {
   remoteDNS: [],
@@ -1732,10 +1732,10 @@ function toYamlString(obj) {
 
 async function generateClashConfig(ports, protocol, settings) {
   const urls = [
-    'https://raw.githubusercontent.com/NiREvil/vless/main/sub/clash-meta.yml',
-    'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml',
-    'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml'
-  ];
+  'https://raw.githubusercontent.com/NiREvil/vless/main/sub/clash-meta.yml',
+  'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml',
+  'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml'
+];
 
   try {
     const rawConfigs = await fetchConfigs(urls, settings.remoteDNS, settings.directDNS);
@@ -1768,12 +1768,10 @@ async function generateClashConfig(ports, protocol, settings) {
 
 async function generateV2rayConfig(protocol, ports, settings) {
   const rawConfigs = await fetchConfigs([
-    'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Splitted-By-Protocol/vmess.txt',
-    'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list10.txt',
-    'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list1.txt',
-    'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list11.txt',
-    'https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Config%20list2.txt'
-  ], settings.remoteDNS, settings.directDNS);
+  'https://raw.githubusercontent.com/NiREvil/vless/main/sub/v2ray.txt',
+  'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt',
+  'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt'
+], settings.remoteDNS, settings.directDNS);
 
   let configContent = '';
   const protocolList = protocol.split(',').map(p => p.toLowerCase());
